@@ -13,7 +13,7 @@
 
 
 ## 小程序二维码：
-![image](https://img2018.cnblogs.com/blog/1530506/201907/1530506-20190717164338242-908547227.jpg)
+![image](https://img2018.cnblogs.com/blog/1530506/201907/1530506-20190718150215809-1199392766.jpg)
 
 
 > 博客地址：[http//:www.bug2048.com](https://www.mica.wang/) 
