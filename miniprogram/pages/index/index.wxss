@@ -1,0 +1,10 @@
+/* miniprogram/pages/index/index.wxss */
+.grid image{
+  height: 300rpx;
+  margin: auto;
+}
+
+.text-content{
+  width: 93%;
+  margin: auto;
+}

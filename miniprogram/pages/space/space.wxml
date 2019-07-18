@@ -1,0 +1,22 @@
+<!--pages/space/space.wxml-->
+<!-- <web-view src="https://www.mica.wang"></web-view> -->
+
+<!-- 
+  danmu-list:弹幕列表
+  enable-danmu:是否显示弹幕
+  danmu-btn:弹幕按钮
+  controls:是否显示视频控件，并没有什么用
+ -->
+<view class="section tc">
+  <video id="myVideo" src="https://mica-1258321866.cos.ap-chengdu.myqcloud.com/mica.MP4" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls enable-progress-gesture></video>
+  <view class="btn-area">
+    <!-- <button class='getVideo' bindtap="bindButtonTap">获取视频</button> -->
+    <view class='wrap'>
+    <input class="danmuinput" placeholder-class='danmuplace' placeholder='说点什么吧~~~'  bindblur="bindInputBlur"/>
+    <button class='danmuFasong' bindtap="bindSendDanmu">发送弹幕</button>
+    </view>
+  </view>
+</view>
+
+<!-- 现在的video就下面三个属性 -->
+<video src="" binderror="" hidden></video>

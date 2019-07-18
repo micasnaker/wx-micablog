@@ -1,0 +1,5 @@
+<!--pages/detail/wxa-plugin-canvas/poster.wxml-->
+<!-- <text>pages/detail/wxa-plugin-canvas/poster.wxml</text> -->
+<!-- <image src='images/mica.JPG'></image> -->
+<!-- <poster id="poster" hide-loading="{{false}}" preload="{{false}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"></poster> -->
+<poster id="poster" hide-loading="{{false}}" preload="{{false}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"></poster>

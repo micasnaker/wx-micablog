@@ -1,0 +1,53 @@
+/* pages/space/space.wxss */
+#myVideo{
+  width: 100% !important;
+  height: 900rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.wrap{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.danmuinput{
+  border: solid 1px #ccc;
+  height: 90rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  padding-left: 20rpx;
+  border-radius: 20rpx;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  width: 70%;
+}
+
+.danmuplace{
+  color: var(--gray);
+}
+
+.danmuFasong{
+  width: 30%;
+  background-color: lightblue;
+  height: 90rpx;
+  font-size: 40rpx;
+  line-height: 90rpx;
+  font-family: sans-serif;
+}
+
+.getVideo{
+  background-color:var(--orangeShadow);
+  color:var(--white);
+  box-shadow: var(--orangeShadow);
+  width: 80%;
+  margin-bottom: 20%;
+  margin-top: 10%;
+}
