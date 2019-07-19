@@ -28,6 +28,7 @@ async function syncWechatPosts(isUpdate) {
   }
   let collection = "mini_posts"
   let accessToken = await getCacheAccessToken(1)
+  console.log(accessToken +"accessToken")
   var offset = parseInt(configData.value.currentOffset);
   let maxCount = parseInt(configData.value.maxSyncCount);
   var count = 10

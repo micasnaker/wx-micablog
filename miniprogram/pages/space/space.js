@@ -1,3 +1,6 @@
+const app = getApp();
+const regeneratorRuntime = require('../../utils/runtime.js');
+
 function getRandomColor() {
   let rgb = []
   for (let i = 0; i < 3; ++i) {
@@ -9,14 +12,14 @@ function getRandomColor() {
 }
 
 Page({
-  onReady: function (res) {
+  onReady: function(res) {
     this.videoContext = wx.createVideoContext('myVideo');
   },
   inputValue: '',
   data: {
     src: '',
-    danmuList: [
-      {
+    userInfo: [],
+    danmuList: [{
         text: '博主os：米卡最帅！',
         color: '#ff0000',
         time: 1
@@ -29,30 +32,48 @@ Page({
     ],
   },
 
-  bindInputBlur: function (e) {
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: async function(options) {
+    let that = this;
+    app.checkUserInfo(function(userInfo, isLogin) {
+      if (!isLogin) {
+        that.setData({
+          showLogin: true
+        })
+      } else {
+        that.setData({
+          userInfo: userInfo
+        });
+      }
+    });
+  },
+
+  bindInputBlur: function(e) {
     this.inputValue = e.detail.value
   },
 
-  bindButtonTap: function () {  //视频下载
+  bindButtonTap: function() { //视频下载
     var that = this
     wx.chooseVideo({
       sourceType: ['album', 'camera'],
       maxDuration: 60,
       camera: ['front', 'back'],
-      success: function (res) {
+      success: function(res) {
         that.setData({
           src: res.tempFilePath
         })
       }
     })
   },
-  bindSendDanmu: function () {
+  bindSendDanmu: function() {
     this.videoContext.sendDanmu({
       text: this.inputValue,
       color: getRandomColor()
     })
   },
-  videoErrorCallback: function (e) {
+  videoErrorCallback: function(e) {
     console.log('视频错误信息:');
     console.log(e.detail.errMsg);
   },

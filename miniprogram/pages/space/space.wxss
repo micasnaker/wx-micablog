@@ -1,5 +1,6 @@
 /* pages/space/space.wxss */
-#myVideo{
+
+#myVideo {
   width: 100% !important;
   height: 900rpx;
   position: absolute;
@@ -9,8 +10,9 @@
   overflow: hidden;
 }
 
-.wrap{
+.wrap {
   display: flex;
+  flex: 1;
   justify-content: center;
   position: absolute;
   bottom: 0;
@@ -18,34 +20,42 @@
   right: 0;
 }
 
-.danmuinput{
-  border: solid 1px #ccc;
-  height: 90rpx;
+.danmuinput {
+  border: solid 1px #fff;
+  height: 80rpx;
   line-height: 80rpx;
   font-size: 35rpx;
   padding-left: 20rpx;
   border-radius: 20rpx;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  width: 70%;
+  width: 58%;
+  flex: 1;
+  background-color: #fff;
 }
 
-.danmuplace{
+.danmuplace {
   color: var(--gray);
 }
 
-.danmuFasong{
-  width: 30%;
-  background-color: lightblue;
-  height: 90rpx;
-  font-size: 40rpx;
+.danmuFasong {
+  width: 26%;
+  background-color: var(--green);
+  color: var(--white);
+  height: 80rpx;
+  font-size: 30rpx;
   line-height: 90rpx;
   font-family: sans-serif;
+  box-shadow: 10px var(--green);
 }
 
-.getVideo{
-  background-color:var(--orangeShadow);
-  color:var(--white);
+.round {
+  margin: 10rpx;
+}
+
+.getVideo {
+  background-color: var(--orangeShadow);
+  color: var(--white);
   box-shadow: var(--orangeShadow);
   width: 80%;
   margin-bottom: 20%;

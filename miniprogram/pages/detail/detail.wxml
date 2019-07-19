@@ -77,7 +77,7 @@
 <!-- 底部功能 -->
 <view class="comment-fixed">
   <form catchsubmit="formSubmit" report-submit="true">
-    <view class="cu-bar input">
+    <view class="cu-bar input" style='padding-bottom:{{btuBottom}}'>
       <view class="cu-avatar round" style="background-image:url({{userInfo.avatarUrl}});" bindtap='showMenuBox'></view>
       <view class='action'>
         <text class='cuIcon-roundaddfill text-grey' bindtap='showMenuBox'></text>

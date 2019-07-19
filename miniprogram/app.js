@@ -2,7 +2,7 @@ const Towxml = require('/towxml/main');
 const config = require('/utils/config.js')
 const util = require('/utils/util.js')
 App({
-  onLaunch: function () {
+  onLaunch: function() {
 
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
@@ -32,17 +32,17 @@ App({
     }
   },
   towxml: new Towxml(),
-  checkUserInfo: function (cb) {
+  checkUserInfo: function(cb) {
     let that = this
     if (that.globalData.userInfo) {
       typeof cb == "function" && cb(that.globalData.userInfo, true);
     } else {
       wx.getSetting({
-        success: function (res) {
+        success: function(res) {
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
-              success: function (res) {
+              success: function(res) {
                 that.globalData.userInfo = JSON.parse(res.rawData);
                 typeof cb == "function" && cb(that.globalData.userInfo, true);
               }
@@ -57,7 +57,7 @@ App({
   /**
    * 初始化最后登录时间
    */
-  bindLastLoginDate: function () {
+  bindLastLoginDate: function() {
     var lastLoginDate = wx.getStorageSync('lastLoginDate');
     console.info(lastLoginDate)
     if (!lastLoginDate || util.formatTime(new Date()) != lastLoginDate) {
@@ -72,6 +72,20 @@ App({
   globalData: {
     openid: "",
     userInfo: null,
-    lastLoginDate: ""//最后登录时间
-  }
+    isIphoneX: false,
+    lastLoginDate: "" //最后登录时间
+  },
+
+  onShow: function() {
+    let that = this;
+    wx.getSystemInfo({
+      success: res => {
+        // console.log('手机信息res'+res.model)  
+        let modelmes = res.model;
+        if (modelmes.search('iPhone X') != -1) {
+          that.globalData.isIphoneX = true
+        }
+      }
+    })
+  },
 })
